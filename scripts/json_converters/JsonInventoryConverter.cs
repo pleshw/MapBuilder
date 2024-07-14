@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Build;
 using Game;
 
 
@@ -32,7 +33,7 @@ public class JsonInventoryConverter : JsonConverter<InventoryComponent>
                                                       .Cast<IItemSlotComponent>()
                                                       .ToList();
 
-    BaseEntity inventoryOwner = EntityTests.GetEntityByUniqueName(uniqueName.UniqueName);
+    BaseEntity inventoryOwner = EntityController.GetEntityByUniqueName(uniqueName.UniqueName);
 
     return new InventoryComponent
     {

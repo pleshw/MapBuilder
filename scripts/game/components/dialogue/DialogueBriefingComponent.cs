@@ -3,7 +3,6 @@ using JSONConverters;
 
 namespace Game;
 
-[JsonConverter(typeof(JsonDialogueBriefingConverter))]
 public class DialogueBriefingComponent : IDialogueBriefingComponent
 {
   public required Guid Id { get; set; }

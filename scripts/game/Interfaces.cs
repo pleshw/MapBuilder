@@ -81,7 +81,7 @@ public interface IAmountKilledComponent : IComponent
 }
 
 [JsonConverter(typeof(JsonBaseItemConverter))]
-public interface IItemComponent : IComponent, IDisplayNameComponent, IUniqueNameComponent, IDescriptionComponent, IDisplayImageComponent, IHasRequiredLevelComponent
+public interface IItemComponent : IComponent, ICopyable, ICloneable, IDisplayNameComponent, IUniqueNameComponent, IDescriptionComponent, IDisplayImageComponent, IHasRequiredLevelComponent
 {
   ItemTypes ItemType { get; set; }
 }
@@ -126,7 +126,6 @@ public interface IHasRequiredLevelComponent : IComponent
   int RequiredLevel { get; set; }
 }
 
-[JsonConverter(typeof(JsonShopItemConverter))]
 public interface IShopItemComponent : IComponent, ICanHide, IHasPrice, IItemFrameComponent, IHasAmountComponent, IUniqueNameComponent
 {
 
@@ -143,7 +142,6 @@ public interface IHasAssignedEntity : IComponent
   IUniqueNameComponent AssignedTo { get; set; }
 }
 
-[JsonConverter(typeof(JsonQuestConverter))]
 public interface IQuestComponent : IComponent, IIdComponent, ITitleComponent, IDescriptionComponent
 {
   List<ITaskComponent> Tasks { get; set; }
@@ -159,13 +157,11 @@ public interface IHasStartComponent : IComponent
   DateTime StartedAt { get; set; }
 }
 
-[JsonConverter(typeof(JsonBaseAssignedTaskConverter))]
 public interface IAssignedTaskComponent : IComponent, IHasAssignedEntity, IHasStartComponent, ITaskComponent, IIdComponent, ITitleComponent, IDescriptionComponent, ICompletableComponent
 {
 
 }
 
-[JsonConverter(typeof(JsonTaskConverter))]
 public interface ITaskComponent : IComponent, IIdComponent, ITitleComponent, IDescriptionComponent
 {
   TaskType TaskType { get; }
@@ -185,7 +181,6 @@ public interface IStageComponent : IComponent, IUniqueNameComponent
   IGridMapComponent GridMap { get; set; }
 }
 
-[JsonConverter(typeof(JsonBaseGridMapConverter))]
 public interface IGridMapComponent : IComponent, ICloneable, ICopyable
 {
   List<IGridCellComponent> GridCells { get; set; }
@@ -201,7 +196,6 @@ public interface ICopyable : IComponent
 }
 
 
-[JsonConverter(typeof(JsonBaseGridCellConverter))]
 public interface IGridCellComponent : IComponent, IHasPositionComponent, ISizeComponent, IIndexComponent, ICloneable, ICopyable
 {
   GridCellStatus Status { get; set; }
@@ -304,7 +298,6 @@ public interface IMenuPickItemComponent : IComponent, IMenuComponent
   List<IItemSlotComponent> ItemList { get; set; }
 }
 
-[JsonConverter(typeof(JsonDialogueBriefingConverter))]
 public interface IDialogueBriefingComponent : IComponent, ICanHide, IIdComponent, ITitleComponent
 {
 }
