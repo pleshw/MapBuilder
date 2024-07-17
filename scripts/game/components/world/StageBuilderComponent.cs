@@ -13,7 +13,7 @@ public class StageBuilderComponent : StageComponent
     {
       for (int j = 0; j < areaSize.Y; ++j)
       {
-        GridMapComponent.Cell((int)(i + offsetPosition.X), (int)(j + offsetPosition.Y), cellStatus);
+        TerrainLayerGridMap.Cell((int)(i + offsetPosition.X), (int)(j + offsetPosition.Y), cellStatus);
       }
     }
   }
@@ -25,7 +25,7 @@ public class StageBuilderComponent : StageComponent
     {
       for (int j = 0; j < gridMapShape.Height; ++j)
       {
-        GridMapComponent.Cell((int)(i + offsetPosition.X), (int)(j + offsetPosition.Y), gridMapShape.Cell(i, j));
+        TerrainLayerGridMap.Cell((int)(i + offsetPosition.X), (int)(j + offsetPosition.Y), gridMapShape.Cell(i, j));
       }
     }
   }

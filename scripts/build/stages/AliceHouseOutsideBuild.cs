@@ -17,7 +17,7 @@ public class AliceHouseOutsideBuild : StageBuild<StageComponent>
       {
         UniqueName = "AliceHouseOutside",
         GatherList = GatherList,
-        GridMap = new GridMapComponent()
+        TerrainLayer = new GridMapComponent()
         {
           GridCells = Enumerable.Range(0, 100)
                           .Select(i => new GridCellImageComponent

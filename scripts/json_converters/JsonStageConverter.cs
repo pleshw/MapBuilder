@@ -33,7 +33,7 @@ public class JsonStageConverter : JsonConverter<StageComponent>
     return new StageComponent
     {
       UniqueName = uniqueName,
-      GridMap = cellList,
+      TerrainLayer = cellList,
       GatherList = gatherList
     };
   }

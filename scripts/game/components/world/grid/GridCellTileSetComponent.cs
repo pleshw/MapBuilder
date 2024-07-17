@@ -6,7 +6,7 @@ namespace Game;
 
 public class GridCellTileSetComponent : GridCellComponent, IGridCellTileSetComponent
 {
-  public Vector2 TileSetPosition { get; set; }
+  public required Vector2 TileSetPosition { get; set; }
 
   public new object Clone()
   {

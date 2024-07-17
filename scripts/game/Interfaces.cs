@@ -178,7 +178,11 @@ public interface IAssignedCollectTaskComponent : IComponent, ICollectTaskCompone
 
 public interface IStageComponent : IComponent, IUniqueNameComponent
 {
-  IGridMapComponent GridMap { get; set; }
+  IGridMapComponent TerrainLayer { get; set; }
+
+  IGridMapComponent DecorationLayer { get; set; }
+
+  IGridMapComponent BackgroundLayer { get; set; }
 }
 
 public interface IGridMapComponent : IComponent, ICloneable, ICopyable
